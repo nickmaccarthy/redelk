@@ -1,0 +1,19 @@
+redis:
+    server1.mydomain.com:
+        port: 6379
+        password: secr3tPassword!
+        db:1
+    127.0.0.1:
+        port: 5544
+        password: ohaithere
+        connection_pool: mypool
+
+elasticsearch:
+    hosts: 
+        - my_esh_server.domain.com
+    args:
+        use_ssl: true
+        port: 9200
+
+script_args:
+    poll_interval: 1
