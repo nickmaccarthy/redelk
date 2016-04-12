@@ -23,7 +23,7 @@ def load_conf():
 conf = load_conf()
 poll_interval = conf['script_args'].get('poll_interval', 1)
 
-es = Elasticsearch([conf['elasticsearch']['hosts']], **conf['elasticsearch']['args'])
+es = Elasticsearch(conf['elasticsearch']['hosts'], **conf['elasticsearch']['args'])
 
 
 def indexit(d):
