@@ -20,6 +20,9 @@ This script will will run forever and is ment to be controlled with something li
 5. Run it with something like supervisor
 6. Install the optional kibana4 dashboard ( json included ) into your kibana 4 instance
 
+# Sample kibana dashboard
+![alt text](redis-kibana.png "Example Redis Dashboard")
+
 # Sample supervisord entry
 
 ```
