@@ -59,24 +59,21 @@ def ddiff(d1,d2):
     return d
 
 
-def worker(host):
-    conn_args = conf['redis'].get(host)
-    conn_args['host'] = host
+def worker(conf):
+    conn_args = conf
     red = redis.Redis(**conn_args)
     d1 = red.info()
     time.sleep(1)
     d2 = red.info()
     diffed = ddiff(d1,d2)
-    diffed['host'] = host
+    diffed['host'] = conf['host']
     #pp.pprint(diffed)
     print indexit(diffed)
 
 def main():
     conf = load_conf()
-    hosts = conf['redis']
-    print hosts
     pool = ThreadPool(processes=5)
-    pool.map(worker, hosts)
+    pool.map(worker, conf['redis'])
     pool.close()
     pool.join()
 
