@@ -2,7 +2,7 @@ arrow==0.7.0
 elasticsearch==2.3.0
 pyaml==15.8.2
 python-dateutil==2.5.2
-PyYAML==3.11
+PyYAML==5.4
 redis==2.10.5
 six==1.10.0
 urllib3==1.14
